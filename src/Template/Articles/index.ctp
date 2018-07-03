@@ -1,7 +1,7 @@
 <div class="content">
-    <div style="box-shadow:0px 0px 20px black" class="box box-solid box-primary">
+    <div class="box box-solid box-primary">
         <div class="box-header">
-           <h3 style="text-shadow:1px 1px 1px black">Blog articles</h3> 
+           <h3>Blog articles</h3> 
         </div>
         <div class="box-body">
             <table class="table">
@@ -15,7 +15,7 @@
                 <?php foreach ($articles as $article): ?>
                     <tr>
                         <td><?= $article->id ?></td>
-                        <td>
+                        <td style="color:black!important">
                             <?= $this->Html->link($article->title, ['action' => 'view', $article->id]) ?>
                         </td>
                         <td>
@@ -38,13 +38,17 @@
             </table>
         </div>
     </div>
-    <button style="text-color:white" type="button" class="btn btn-success col-md-3">
-        <strong><?= $this->Html->link('Adicionar artigo', ['action' => 'add']) ?></strong>
+    <button type="button" class="btn btn-success">
+        <?= $this->Html->link('Adicionar artigo', ['action' => 'add']) ?>
     </button>
 </div>
 
 <style>
     table, td, th {
-        border: 1px solid #7ea8c8
+        border: 1px solid #7ea8c8;
+        color: black!important
+    }
+    .btn>a{
+        color:white!important
     }
 </style>
