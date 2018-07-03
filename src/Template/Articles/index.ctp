@@ -22,16 +22,22 @@
                             <?= $article->created->format(DATE_RFC850) ?>
                         </td>
                         <td>
-                            <button type="button" class="btn btn-danger">
+                            <div class="col-md-6">
+                                <button type="button" class="btn btn-danger btn-block">
+                                <i class="fa fa-trash"></i>
                                 <?= $this->Form->postLink(
                                     'Deletar',
                                     ['action' => 'delete', $article->id],
                                     ['confirm' => 'Tem certeza?'])
                                 ?>
-                            </button>
-                            <button class="btn btn-info">
+                                </button>
+                            </div>
+                            <div class="col-md-6">
+                                <button class="btn btn-info btn-block">
+                                <i class="fa fa-edit"></i>
                                 <?= $this->Html->link('Editar', ['action' => 'edit', $article->id]) ?>
-                            </button>
+                                </button>
+                            </div>
                         </td>
                     </tr>
                 <?php endforeach; ?>
@@ -39,6 +45,7 @@
         </div>
     </div>
     <button type="button" class="btn btn-success">
+    <i class="fa fa-plus"></i>
         <?= $this->Html->link('Adicionar artigo', ['action' => 'add']) ?>
     </button>
 </div>
